@@ -91,6 +91,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+
                   const SizedBox(height: 16,),
 
                   const Text('Airport Hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -109,6 +110,7 @@ class _HomePageState extends State<HomePage> {
                         makeItem(image:'assets/images/ic_hotel5.jpg', title:'Hotel 1'),
                       ],
                     ),
+
                   ),const SizedBox(height: 16,),
 
                   const Text('Airport Hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -142,17 +144,17 @@ class _HomePageState extends State<HomePage> {
     child: Container(
       margin: const EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        image: DecorationImage(image: AssetImage(image),
-        fit: BoxFit.cover)
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(image: AssetImage(image),
+          fit: BoxFit.cover)
       ),
       height: 200,
       child: Container(
         padding: const EdgeInsets.all(20),
         alignment: Alignment.bottomLeft,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          gradient: LinearGradient(
+            borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
             begin: Alignment.bottomRight,
             colors: [
               Colors.black87.withOpacity(0.7),
