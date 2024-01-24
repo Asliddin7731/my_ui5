@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Container(
-              height: 300,
+              height: 240,
               width: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -34,14 +35,14 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     const Text(
-                      'What kind of hotel you need?',
+                      'Best Hotels Ever',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(height: 25,),
                     Container(
                       height: 50,
                       decoration: BoxDecoration(
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Text('Best hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  const Text('Business Hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
                   SizedBox(
@@ -92,7 +93,25 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(height: 16,),
 
-                  const Text('Luxury hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  const Text('Airport Hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    height: 190,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        makeItem(image:'assets/images/ic_hotel3.jpg', title:'Hotel 1'),
+                        makeItem(image:'assets/images/ic_hotel1.jpg', title:'Hotel 1'),
+                        makeItem(image:'assets/images/ic_hotel2.jpg', title:'Hotel 1'),
+                        makeItem(image:'assets/images/ic_hotel4.jpg', title:'Hotel 1'),
+                        makeItem(image:'assets/images/ic_hotel5.jpg', title:'Hotel 1'),
+                      ],
+                    ),
+                  ),const SizedBox(height: 16,),
+
+                  const Text('Airport Hotels', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
                   SizedBox(
@@ -102,10 +121,10 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       children: [
                         makeItem(image:'assets/images/ic_hotel5.jpg', title:'Hotel 1'),
+                        makeItem(image:'assets/images/ic_hotel4.jpg', title:'Hotel 1'),
                         makeItem(image:'assets/images/ic_hotel1.jpg', title:'Hotel 1'),
                         makeItem(image:'assets/images/ic_hotel2.jpg', title:'Hotel 1'),
                         makeItem(image:'assets/images/ic_hotel3.jpg', title:'Hotel 1'),
-                        makeItem(image:'assets/images/ic_hotel4.jpg', title:'Hotel 1'),
                       ],
                     ),
                   ),
@@ -119,7 +138,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget makeItem( {required String image, required String title}) {
-    return AspectRatio(aspectRatio:  1.5/1,
+    return AspectRatio(aspectRatio:  1/1,
     child: Container(
       margin: const EdgeInsets.only(right: 15),
       decoration: BoxDecoration(
@@ -141,7 +160,13 @@ class _HomePageState extends State<HomePage> {
             ]
           )
         ),
-        child: Text(title, style: const TextStyle(color: Colors.white, fontSize: 15),),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title, style: const TextStyle(color: Colors.white, fontSize: 15),),
+            const Icon(CupertinoIcons.heart_fill, color: Colors.red,)
+          ],
+        ),
       ),
     ),
     );
